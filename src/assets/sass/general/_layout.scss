@@ -1,0 +1,17 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+.container{
+	width: 100%;
+	max-width: 768px;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+/* Desktop */
+@media (min-width: 482px ){
+	.container{
+		padding: 15px;
+	}
+}

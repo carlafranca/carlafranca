@@ -1,0 +1,286 @@
+/** ----------------------------------------------------
+//  0. Index
+//  1. Global
+//  2  YT common
+//  3. YT Header
+//  4. YT Buttons
+//  5  YT Pagination
+//  6. YT Card
+//  7. YT Video
+// ---------------------------------------------------- **/
+
+
+/** ----------------------------------------------------
+// 1. GENERAL SETTINGS
+// ---------------------------------------------------- **/
+
+.list-unstyled{
+	padding-left: 0;
+	list-style: none;
+}
+
+.truncate {
+  	width: 250px;
+  	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
+.smooth-effect{
+	transition: .3s ease-in-out;
+}
+
+.evt__target{
+	cursor: pointer;
+}
+
+
+/** ----------------------------------------------------
+// 2. YT COMMON
+// ---------------------------------------------------- **/
+
+/* reusable code on playlist and video details */
+.yt{
+
+	&__title{
+		@include fontSize(20);
+		line-height: 1.3;
+		margin: 0;
+
+		a{
+			display: block;
+			color: #219186;
+		}
+
+		a:hover,
+		a:focus{
+			color: #26A699;
+			outline: none;
+		}
+
+	}
+	&__date{
+		@include fontSize(14);
+		margin: 5px 0;
+		color: #707070;
+	}
+	&__desc{
+		 @extend %wrapLink;
+	}
+}
+
+
+/** ----------------------------------------------------
+// 3. YT.HEADER
+// ---------------------------------------------------- **/
+
+.yt-header{
+	&__title{
+		margin: 0;
+	}
+
+	margin:0 0  25px;
+	border-bottom: 1px dotted $border-color;
+}
+@media (min-width: 482px ){
+	.yt-header{
+		padding: 5px 0;
+	}
+}
+
+
+/** ----------------------------------------------------
+// 4. YT.BUTTONS
+// ---------------------------------------------------- **/
+
+.yt-btn{
+	color: #FFFFFF;
+	text-align: center;
+	cursor: pointer;
+
+	padding: 8px 16px;
+	border: none;
+	border-radius: 2px;
+	background-color: #219186;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
+
+	&:hover,
+	&:focus{
+		outline: none;
+		background-color: #26A699;
+		box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+	}
+}
+
+
+/** ----------------------------------------------------
+// 5. YT.PAGINATION
+// ---------------------------------------------------- **/
+
+.yt-paging{
+
+	text-align: right;
+
+	&__btn:hover:not([yt-paging__btn-disabled]),
+	&__btn:focus:not([yt-paging__btn-disabled]){
+		 @extend .yt-btn:hover;
+	}
+
+	&__btn-disabled{
+		background: rgb(186, 186, 186);
+		pointer-events: none;
+	}
+
+}
+
+
+/** ----------------------------------------------------
+// 6. YT.CARD
+// ---------------------------------------------------- **/
+
+.yt-card{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+	box-shadow: 0 -0.5px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0px rgba(0,0,0,0.12);
+
+	transition: box-shadow .25s;
+	border-radius: 2px;
+
+	&__title{
+		a:after{ display:none; }
+		a:hover:after,
+		a:focus:after{
+			display: inline-block;
+			font-size: 65%;
+		}
+	}
+
+	&__media{
+		position: relative;
+		margin: 0;
+		order: 2;
+		overflow: hidden;
+
+		img{
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			height:  100%;
+			object-fit: cover;
+			object-position: 50% 50%;
+			transform: scale(1);
+		}
+		img:hover,
+		img:focus{
+			transform: scale(1.1);
+		}
+	}
+
+	&__body{
+		padding: 15px 15px 5px;
+		order: 1;
+	}
+	&__desc{
+		display: none;
+	}
+}
+
+
+@media (min-width: 482px ){
+	.top{
+		position: static;
+	}
+	.yt-card{
+		flex-direction: row;
+
+		&__media,
+		&__body{
+			flex: 1 1 50%;
+		}
+
+		&__media{ order: 1; }
+		&__body{ order: 2; }
+
+		&__desc{
+			margin: 15px 0 0;
+			display: block;
+		}
+	}
+
+}
+
+
+/** ----------------------------------------------------
+// 7. YT.VIDEO
+// ---------------------------------------------------- **/
+
+.yt-video__link{
+
+	display: inline-block;
+	&:hover,
+	&:focus{
+		color: #FFFFFF;
+	}
+}
+.yt-video{
+
+	&__title{
+		@include fontSize(32);
+		margin-top: 20px;
+	}
+
+	&__body{
+		overflow: hidden;
+	}
+	&__player,
+	&__player{
+
+		display: block;
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+
+		iframe,
+		object,
+		embed{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+	}
+
+	&__desc{
+		padding: 15px 15px 5px 0;
+	}
+}
+
+
+@media (min-width: 482px ){
+
+	.yt-video{
+
+		&__title{
+			@include fontSize(28);
+			margin-top: 20px;
+		}
+
+		&__player,
+		&__desc{
+			width: 50%;
+			float: left;
+		}
+		/* Reduced padding in half to correct resize video using 50% of the space */
+		&__player{
+			padding-bottom: 28.125%;
+		}
+		&__desc{
+			padding: 0 15px 5px;
+		}
+
+	}
+}

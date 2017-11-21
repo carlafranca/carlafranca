@@ -1,0 +1,52 @@
+/** ----------------------------------------------------
+//  0. Index
+//  1. Colors setup
+//  2  Main Structure
+//  3. Link/button events
+// ---------------------------------------------------- **/
+
+/** ----------------------------------------------------
+// 1. COLOR SETUP
+// ---------------------------------------------------- **/
+
+$primary: #404040;
+$white: #FFFFFF;
+$border-color: rgba($primary, 0.6);
+
+$btn-link: #219186;
+$btn-link-hover: rgba($btn-link, 0.6);
+
+
+/** ----------------------------------------------------
+// 2. STRUCTURE
+// ---------------------------------------------------- **/
+
+.ng-cloak,
+.x-ng-cloak {
+  	display: none !important;
+}
+
+html{
+	font-size: 16px;
+	font-family: Helvetica, aria,  sans-serif;
+	line-height: 1.5;
+	font-weight: normal;
+
+	color: $primary;
+}
+
+body{
+	@include fontSize(16);
+}
+
+/** ----------------------------------------------------
+// 2. LINK/BUTTON EVENT
+// ---------------------------------------------------- **/
+
+a,
+a:hover,
+a:focus,
+a:visited{
+	text-decoration: none;
+}
+

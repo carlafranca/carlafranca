@@ -1,0 +1,24 @@
+<figure class="yt-card__media" >
+	<img
+		class="evt__target smooth-effect"
+		role="button"
+		tabindex="0"
+		aria-label="watch {{::$ctrl.item.title}}"
+		alt=""
+		ng-src="{{ ::$ctrl.item.thumbs.medium.url }}" />
+</figure>
+
+<div class="yt-card__body">
+	<h2 class="yt-card__title yt__title">
+		<a
+			href=""
+			class="evt__target icon-after"
+			role="button"
+			data-icon="&#xf054;"
+			ng-bind="::$ctrl.item.title"></a>
+	</h2>
+	<p class="yt-card__date yt__date">
+		Published on <span ng-bind="::$ctrl.item.date"></span>
+	</p>
+	<p class="yt-card__desc yt__desc" ng-bind="::$ctrl.item.descTruncated"></p>
+</div>

@@ -1,0 +1,26 @@
+<a
+	ui-sref="list({page: $ctrl.video.pgparam})"
+	tabindex="0"
+	class="yt-video__link yt-btn smooth-effect icon-before"
+	data-icon="&#xf053;">Back to list of videos
+</a>
+
+<div class="yt-video yt">
+
+	<header class="yt-video__header">
+
+		<h1 class="yt-video__title yt__title">{{ ::$ctrl.video.video.title }}</h1>
+		<p class="yt-video__date yt__date">
+			Published on <span>{{ ::$ctrl.video.video.date }}</span>
+		</p>
+
+	</header>
+
+	<div class="yt-video__body">
+
+		<yt-player class="yt-video__player" videoid="::$ctrl.video.video.videoId"></yt-player>
+
+		<div class="yt-video__desc yt__desc" ng-bind="::$ctrl.video.video.desc"></div>
+
+	</div>
+</div>

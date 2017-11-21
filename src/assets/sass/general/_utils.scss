@@ -1,0 +1,56 @@
+/** ----------------------------------------------------
+//  0. Index
+//  1. Convert px to rem
+//  2  Link wrap
+//  3. Data icon
+// ---------------------------------------------------- **/
+
+
+/** ----------------------------------------------------
+// 1. PX TO REM
+// ---------------------------------------------------- **/
+
+/*
+	Convert px to rem
+	usage: @include font(14);
+*/
+
+$base_font_size: 16;
+
+@mixin fontSize($px) {
+	font-size: $px + px;
+	font-size: $px / $base_font_size + rem;
+}
+
+/** ----------------------------------------------------
+// 2. LINK WRAP
+// ---------------------------------------------------- **/
+
+%wrapLink {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-all;
+	word-break: break-word;
+	hyphens: auto;
+}
+
+
+/** ----------------------------------------------------
+// 3. DATA ICON
+// ---------------------------------------------------- **/
+
+.icon-setup{
+	font-family: FontAwesome;
+	font-size: 80%;
+	content: attr(data-icon);
+	speak: none;
+}
+.icon-before:before{
+	@extend .icon-setup;
+	padding-right: 10px;
+}
+.icon-after:after{
+	@extend .icon-setup;
+	padding-left: 10px;
+}
+
