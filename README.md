@@ -36,11 +36,11 @@ Run the server:
 npm start
 ```
 
-Everything is compiled and outputted inside `/docs`, this is the same for both local development and deployment (not using dist here due to guithub page folder name requeriment).
+Everything is compiled and outputted inside `/docs`, this is the same for both local development and deployment (not using dist here due to github page folder name requirement).
 
 ## Tasks
 
-Here are all tasks available:
+Here are all the tasks available:
 
 Run the local server:
 
@@ -57,4 +57,4 @@ npm run deploy
 
 ## Notes
 
-I encountered a few issues reloading/refreshing the page aligned with `html5Mode` on guithub and the limitation using `.htaccess`. To fix this issue I'm using [this](https://github.com/rafrex/spa-github-pages) solution. This may cause flick on reload.
+I encountered a few issues reloading/refreshing the page aligned with `html5Mode` on github and the limitation with implementing `.htaccess`. To fix this issue I'm using [this](https://github.com/rafrex/spa-github-pages) solution. This may cause some flick on reload.
