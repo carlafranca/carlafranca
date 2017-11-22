@@ -10,7 +10,7 @@
 
 ## Live demo
 
-[Here's the YT playlist](https://carlafranca.github.io/carlafranca).
+[YT playlist demo](https://carlafranca.github.io/carlafranca).
 
 ## Setup and install
 
@@ -23,7 +23,7 @@
 #### Project installation and server
 
 
- Intall dependencies:
+ Install dependencies:
 
 ```
 npm install
@@ -57,4 +57,4 @@ npm run deploy
 
 ## Notes
 
-To run this app on guithub I encounter a few problems with dynamic root
+I encountered a few issues reloading/refreshing the page on guithub and beacause I can't add .htaccess I'm using [this](https://github.com/rafrex/spa-github-pages) solution. Maybe this will show some flick on reload.
