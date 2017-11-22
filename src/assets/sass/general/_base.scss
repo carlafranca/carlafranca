@@ -11,10 +11,14 @@
 
 $primary: #404040;
 $white: #FFFFFF;
-$border-color: rgba($primary, 0.6);
+$border-color: rgba($primary, 0.2);
+$light-gray: rgba($primary, 0.75);
 
 $btn-link: #219186;
-$btn-link-hover: rgba($btn-link, 0.6);
+$btn-link-hover: rgba($btn-link, 0.85);
+
+$link: #219186;
+$link-hover: rgba($link, 0.85);
 
 
 /** ----------------------------------------------------
@@ -27,9 +31,9 @@ $btn-link-hover: rgba($btn-link, 0.6);
 }
 
 html{
-	font-size: 16px;
+	font-size: 100%;
 	font-family: Helvetica, aria,  sans-serif;
-	line-height: 1.5;
+	line-height: 1.8;
 	font-weight: normal;
 
 	color: $primary;

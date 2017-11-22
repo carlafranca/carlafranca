@@ -14,8 +14,8 @@
 			$httpProvider.useApplyAsync(true);
 			//improve page load removing extra classes/attr used by Angular for testing
 			$compileProvider.debugInfoEnabled(true);
-
-			   $compileProvider.commentDirectivesEnabled(false);
+			$compileProvider.onChangesTtl();
+			$compileProvider.commentDirectivesEnabled(false);
             $compileProvider.cssClassDirectivesEnabled(false);
 		}
 

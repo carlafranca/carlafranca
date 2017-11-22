@@ -49,12 +49,12 @@
 
 		a{
 			display: block;
-			color: #219186;
+			color: $btn-link;
 		}
 
 		a:hover,
 		a:focus{
-			color: #26A699;
+			color: $btn-link-hover;
 			outline: none;
 		}
 
@@ -62,7 +62,7 @@
 	&__date{
 		@include fontSize(14);
 		margin: 5px 0;
-		color: #707070;
+		color: $light-gray;
 	}
 	&__desc{
 		 @extend %wrapLink;
@@ -94,20 +94,20 @@
 // ---------------------------------------------------- **/
 
 .yt-btn{
-	color: #FFFFFF;
+	color: $white;
 	text-align: center;
 	cursor: pointer;
 
 	padding: 8px 16px;
 	border: none;
 	border-radius: 2px;
-	background-color: #219186;
+	background-color: $btn-link;
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
 
 	&:hover,
 	&:focus{
 		outline: none;
-		background-color: #26A699;
+		background-color: $btn-link-hover;
 		box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
 	}
 }
@@ -141,19 +141,12 @@
 .yt-card{
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 20px;
-	box-shadow: 0 -0.5px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0px rgba(0,0,0,0.12);
-
-	transition: box-shadow .25s;
-	border-radius: 2px;
+	margin-bottom: 25px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid $border-color;
 
 	&__title{
-		a:after{ display:none; }
-		a:hover:after,
-		a:focus:after{
-			display: inline-block;
-			font-size: 65%;
-		}
+		a:after{ display: none; }
 	}
 
 	&__media{
@@ -178,7 +171,7 @@
 	}
 
 	&__body{
-		padding: 15px 15px 5px;
+		padding-bottom: 5px;
 		order: 1;
 	}
 	&__desc{
@@ -194,13 +187,26 @@
 	.yt-card{
 		flex-direction: row;
 
+		&__title{
+			a:hover:after,
+			a:focus:after{
+				display: inline-block;
+				font-size: 65%;
+			}
+		}
+
 		&__media,
 		&__body{
 			flex: 1 1 50%;
 		}
 
-		&__media{ order: 1; }
-		&__body{ order: 2; }
+		&__media{
+			order: 1;
+		}
+		&__body{
+			padding: 0 15px 5px;
+			order: 2;
+		}
 
 		&__desc{
 			margin: 15px 0 0;
@@ -220,7 +226,7 @@
 	display: inline-block;
 	&:hover,
 	&:focus{
-		color: #FFFFFF;
+		color: $white;
 	}
 }
 .yt-video{
@@ -256,6 +262,14 @@
 
 	&__desc{
 		padding: 15px 15px 5px 0;
+	}
+	&__readmore{
+			color: $link;
+    		display: block;
+		&:hover,
+		&:focus{
+			color: $link-hover;
+		}
 	}
 }
 

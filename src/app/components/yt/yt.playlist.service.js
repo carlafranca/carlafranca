@@ -54,7 +54,7 @@
 									resultList.thumbs = item.snippet.thumbnails;
 									resultList.desc = item.snippet.description;
 
-									resultList.descTruncated = item.snippet.description && $filter('limitTo')(item.snippet.description, 100) +'...';
+									resultList.descTruncated = item.snippet.description && $filter('limitTo')(item.snippet.description, 100) +' ...';
 									resultList.date = $filter('date')(item.snippet.publishedAt);
 
 								return resultList;

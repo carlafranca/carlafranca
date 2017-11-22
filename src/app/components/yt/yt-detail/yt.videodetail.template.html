@@ -19,8 +19,15 @@
 	<div class="yt-video__body">
 
 		<yt-player class="yt-video__player" videoid="::$ctrl.video.video.videoId"></yt-player>
-
-		<div class="yt-video__desc yt__desc" ng-bind="::$ctrl.video.video.desc"></div>
+		<div class="yt-video__desc yt__desc">
+				{{$ctrl.desc}}
+				<a
+					ng-if="$ctrl.desc.length >= ($ctrl.initLimit - 1)"
+					role="button"
+					href=""
+					ng-click="::$ctrl.readMore(); $event.stopPropagation();" class="yt-video__readmore">{{$ctrl.readMoreLabel}}
+				</a>
+		</div>
 
 	</div>
 </div>
