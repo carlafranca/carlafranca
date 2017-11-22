@@ -57,4 +57,4 @@ npm run deploy
 
 ## Notes
 
-I encountered a few issues reloading/refreshing the page on guithub and beacause I can't add .htaccess I'm using [this](https://github.com/rafrex/spa-github-pages) solution. Maybe this will show some flick on reload.
+I encountered a few issues reloading/refreshing the page aligned with `html5Mode` on guithub and the limitation using `.htaccess`. To fix this issue I'm using [this](https://github.com/rafrex/spa-github-pages) solution. This may cause flick on reload.
