@@ -2,14 +2,11 @@
     <h1 class="yt-header__title">My YouTube playlist</h1>
 </header>
 
-
 <yt-paging item="$ctrl.list" pos="top"></yt-paging>
 
-<!-- using event delegate directive -->
-<!-- pass obj to evtdelegation directive -->
 <main>
     <ul class="list-unstyled" evt-delegate="{selector: '.evt__target', action: 'videoDetail', paging: $ctrl.param}">
-        <li ng-repeat="item in $ctrl.list.items track by item.id" >
+        <li ng-repeat="item in $ctrl.list.items track by item.id" data-id="{{$index}}">
             <yt-item item="item" class="yt-card yt"></yt-item>
         </li>
     </ul>

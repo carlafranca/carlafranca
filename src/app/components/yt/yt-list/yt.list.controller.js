@@ -7,7 +7,7 @@
 		this.param = $stateParams.page;
 
 		this.videoDetail = function(item){
-			$state.go('video', {video: item.item.videoId, page : this.param});
+			$state.go('video', {video: item.videoId, page : this.param});
 		};
 
 	}

@@ -23,8 +23,7 @@
 					eventType = evtObject.eventType || 'click',
 					selector = evtObject.selector,
 					action = evtObject.action,
-					item = evtObject.item || null;
-
+					item = evtObject.item;
 
 				//This should be converted to vanila JS
 				//Using jquery for prototype
@@ -32,10 +31,17 @@
 
 					e.preventDefault();
 
-					var scopeItem = $( e.target ).scope();
+					//using debugInfoEnabled(false) disabled the scope()
+					//in this case plus not passing the item via the directive
+					//use the solution below (should make it more reusable)
+					if(!item){
+						var eleId = $(e.target).parents('[data-id]').attr('data-id');
+						item = scope.$ctrl.list.items[eleId];
+					}
 
-					//Call function in controller and pass the item
-					scope.$ctrl[action](item || scopeItem.$ctrl);
+					//Call function(action) in controller and pass the item
+					scope.$ctrl[action](item);
+
 				});
 
 				scope.$on( "$destroy", function( event ) {
