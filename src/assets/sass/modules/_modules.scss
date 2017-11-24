@@ -145,9 +145,9 @@
 	padding-bottom: 25px;
 	border-bottom: 1px solid $border-color;
 
-	&__title{
+/*	&__title{
 		a:after{ display: none; }
-	}
+	}*/
 
 	&__media{
 		position: relative;
@@ -188,11 +188,18 @@
 		flex-direction: row;
 
 		&__title{
-			a:hover:after,
-			a:focus:after{
-				display: inline-block;
-				font-size: 65%;
+
+			display: inline-block;
+
+			a{
+				border-bottom: 1px solid transparent;
 			}
+
+			a:hover,
+			a:focus{
+				border-bottom: 1px solid $border-color;
+			}
+
 		}
 
 		&__media,

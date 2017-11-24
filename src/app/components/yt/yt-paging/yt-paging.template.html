@@ -1,13 +1,13 @@
 <nav aria-label="pagination {{$ctrl.pos}}" class="yt-paging">
 
-	<button
+	<a href="" role="bottom"
 		ng-class="{'yt-paging__btn-disabled': $ctrl.item.prevPageToken == undefined}"
 		class="yt-paging__btn yt-btn smooth-effect"
-		ng-click="$ctrl.paging($ctrl.item.prevPageToken);">Prev</button>
+		ng-click="$ctrl.paging($ctrl.item.prevPageToken);">Prev</a>
 
-	<button
+	<a href="" role="bottom"
 		ng-class="{'yt-paging__btn-disabled': $ctrl.item.nextPageToken == undefined}"
 		class="yt-paging__btn yt-btn smooth-effect"
-		ng-click="$ctrl.paging($ctrl.item.nextPageToken);">Next</button>
+		ng-click="$ctrl.paging($ctrl.item.nextPageToken);">Next</a>
 
 </nav>

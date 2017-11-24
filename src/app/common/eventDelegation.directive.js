@@ -5,9 +5,9 @@
  *
  * @description
  *
- * This directive will add event delegation.
- * It accepts the select as class, the event type,
- * the function it will call and the ele/item to be manipulated
+ * Event Delegation directive.
+ * This directive accept an object with the event settings.
+ * {selector="trigger as class", action = "function to be called on controller", item = 'info to be passed to the function', [,eventType] },
  *
  **/
 
@@ -31,9 +31,12 @@
 
 					e.preventDefault();
 
-					//using debugInfoEnabled(false) disabled the scope()
-					//in this case plus not passing the item via the directive
-					//use the solution below (should make it more reusable)
+					//Due to using debugInfoEnabled(false) disabled the scope()
+					//Item should be passed via directive attr obj
+
+					//If item can't be passed via directive I added the solution below
+					//to pass the item index.
+					//This should be improved to a more reusable solution
 					if(!item){
 						var eleId = $(e.target).parents('[data-id]').attr('data-id');
 						item = scope.$ctrl.list.items[eleId];
@@ -57,7 +60,7 @@
 		}
 
 	evtDelegate.$inject = ['$parse'];
-	angular.module('eventDelegation', [])
+	angular.module('utils')
 		.directive('evtDelegate', evtDelegate);
 
 }());

@@ -3,6 +3,6 @@
 	'use strict';
 
 	angular
-		.module('components.yt', ['ui.router', 'eventDelegation']);
+		.module('components.yt', ['ui.router', 'utils']);
 
 }());
